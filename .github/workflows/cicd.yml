@@ -39,7 +39,8 @@ jobs:
              npm install passport
              npm install stripe
 #       - run: npm run build --if-present
-        
+      - name: set .env
+        run: echo ${{ secrets.MONGODB_PORT }} >> .env 
       - run: npm test
       
       - name: Login to DockerHub
