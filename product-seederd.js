@@ -2,7 +2,9 @@ var Product = require('../models/product');
 
 var mongoose = require('mongoose');
 
-mongoose.connect('host.docker.internal:27017/shopping');
+const port = process.env.MONGO_PORT;
+
+mongoose.connect('mongodb://${port}:27017/shopping');
 // var pro= new Product() so by doing this we store 1 product of SCHEMA "Product" in variable pro....but here we have 
 //done the same thing in array so that we can use loop.
 var products = [

@@ -17,8 +17,9 @@ var index = require('./routes/index');
 var userRoutes = require('./routes/user');
 
 var app = express();
+const port = process.env.MONGO_PORT;
 
-mongoose.connect('host.docker.internal:27017/shopping');
+mongoose.connect('mongodb://${port}:27017/shopping');
 require('./config/passport');
 
 // view engine setup
