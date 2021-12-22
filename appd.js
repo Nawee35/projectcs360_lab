@@ -19,7 +19,7 @@ var userRoutes = require('./routes/user');
 var app = express();
 const port = process.env.MONGO_PORT;
 
-mongoose.connect('mongodb://${port}:27017/shopping');
+mongoose.connect('port');
 require('./config/passport');
 
 // view engine setup

@@ -2,9 +2,9 @@ var Product = require('../models/product');
 
 var mongoose = require('mongoose');
 
-const port = process.env.MONGO_PORT;
+const mongourl = process.env.MONGO_URL;
 
-mongoose.connect('mongodb://${port}:27017/shopping');
+mongoose.connect(mongourl);
 // var pro= new Product() so by doing this we store 1 product of SCHEMA "Product" in variable pro....but here we have 
 //done the same thing in array so that we can use loop.
 var products = [
